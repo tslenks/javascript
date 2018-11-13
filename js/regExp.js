@@ -66,8 +66,8 @@ console.log(endWith.test('Arianetyst')); // true
 /**
  * Les méthodes de String qui peuvent prendre en paramètres les ER
  * split()
- * match()
+ * match() depend de la propriété du regexp (ajout du g ou non)
  */
 console.log('Split By Space'.split(/\s+/));
 console.log('match ','Split By Space or ice can roll the dice and it is nice'.match(/[ce]+/));  // retourne la première ce trouvée
-console.log('match with g','Split By Space or ice can roll the dice and it is nice'.match(/[ce]+/g)); // retourne toute les ce
+console.log('match with g','Split By Space or ice can roll the dice and it is nice'.match(/[ce]+/g)); // retourne toute les ce trouvées

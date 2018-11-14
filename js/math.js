@@ -39,3 +39,10 @@ Math.random(); // 0.0 <= v <= 1
 6 * Math.random(); // 0.0 <= v <= 6.0
 Math.floor(6 * Math.random()); // 0 <= v <= 6
 
+const dice = {
+    sides:6,
+    roll(){
+        return Math.floor(this.sides * Math.random()) + 1; // ajout de "+1" ici car Math.random peut avoir une valeur nulle
+    }
+}
+console.log('random value', dice.roll());

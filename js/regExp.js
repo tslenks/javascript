@@ -66,8 +66,13 @@ console.log(endWith.test('Arianetyst')); // true
 /**
  * Les méthodes de String qui peuvent prendre en paramètres les ER
  * split()
- * match() depend de la propriété du regexp (ajout du g ou non)
+ * match()
+ * search() retourne l'index du premier instance trouvée
+ * replace() remplace toutes les matching avec les valeurs à remplacer
  */
 console.log('Split By Space'.split(/\s+/));
 console.log('match ','Split By Space or ice can roll the dice and it is nice'.match(/[ce]+/));  // retourne la première ce trouvée
-console.log('match with g','Split By Space or ice can roll the dice and it is nice'.match(/[ce]+/g)); // retourne toute les ce trouvées
+console.log('match with g','Split By Space or ice can roll the dice and it is nice'.match(/[ce]{2}/g)); // retourne toute les ce
+console.log('search ', 'Savage is not about age, it is about ermittage'.search(/age/));
+console.log('replace with i', 'SavAge is not about age, it is about ermittage'.replace(/age/i, 'LOOL')); // remplace seulement la première trouvée
+console.log('replace with g and i', 'Savage is not about age, it is about ermittage'.replace(/age/ig, 'LOOL')); // remplace tous les mots trouvés

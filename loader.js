@@ -3,7 +3,9 @@
 // loadFiles('array');
 // loadFiles('Object');
 // loadFiles('date');
-loadFiles('regExp');
+// loadFiles('regExp');
+//loadFiles('math');
+loadFiles('dom');
 loadFiles('cssPart', 'css', 'css');
 
 /**

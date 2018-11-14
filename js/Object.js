@@ -37,3 +37,35 @@ Object.values(exToObject).forEach(val => {
     div.appendChild(text);
     document.body.appendChild(div);
 });
+
+const quizz = {
+    name:'Quizz',
+    description:'Answer to the quizz to win a coin',
+    questions:[{
+        question: 'Name of Wonder Woman in the movie', 
+        response: 'Dianna Prince',
+    },{
+        question: 'Name of Superman in the movie', 
+        response: 'Clark Kent',
+    },{
+        question: 'Name of Wonder Batman in the movie', 
+        response: 'Bruce Wayne',
+    }], 
+    score:0,  
+    askAndAnswer(q) {
+        const re = new RegExp(q.response, 'gi');
+        const response  = prompt(q.question);
+        return re.test(response) ?  1 : 0;
+    },
+    launch(){
+        const score = this.questions    
+        .map(q => this.askAndAnswer(q))
+        .reduce((total, val)=> total += val);
+        this.displayScore(score);
+    },
+    displayScore(score) {
+        console.log(this.description + '\n' + 'Your score ' + score);
+    }        
+};
+
+quizz.launch();
